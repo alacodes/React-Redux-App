@@ -2,8 +2,8 @@
 
 const initialState = {
     recipe: [],
-    isLoading: false,
-    error: ''
+    test: `I think things are working`
+
 }
 
 export const reducer = (state = initialState, action) => {
