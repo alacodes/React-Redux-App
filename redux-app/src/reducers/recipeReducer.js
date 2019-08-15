@@ -2,7 +2,7 @@
 
 const initialState = {
     recipe: [],
-    test: `I think things are working`
+    isLoading: false
 
 }
 

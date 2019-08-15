@@ -1,26 +1,17 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Loader from 'react-loader-spinner'
 
 
 const Recipe = props => {
     
     return(
         <div>
-            <h1>{props.test}</h1>
-            <p>it's working</p>
+            <h2>{props.recipe.name}</h2>
         </div>
     )
 
 }
 
 
-const mapStateToProps = state => {
-    return(
-        state
-    )
-}
-
-export default connect(
-    mapStateToProps, 
-    {}
-    )(Recipe);
+export default Recipe;
