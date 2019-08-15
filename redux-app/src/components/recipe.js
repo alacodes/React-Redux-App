@@ -3,16 +3,24 @@ import {connect} from 'react-redux';
 
 
 const Recipe = props => {
-    return <h1>{props.test}</h1>
+    
+    return(
+        <div>
+            <h1>{props.test}</h1>
+            <p>it's working</p>
+        </div>
+    )
+
 }
 
+
 const mapStateToProps = state => {
-    return {
-        test: state.test
-    }
+    return(
+        state
+    )
 }
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps, 
     {}
-)(Recipe);
+    )(Recipe);
