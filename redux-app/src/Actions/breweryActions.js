@@ -1,8 +1,9 @@
 import axios from 'axios';
 
-//avoiding error messages
+//this tells our reducer what state needs to transition, AND it helps avoid error messages
 export const GETTING_BREWERY_DATA_START = 'GETTING_BREWERY_DATA_START';
 export const GETTING_BREWERY_DATA_SUCCESS = 'GETTING_BREWERY_DATA_SUCCESS';
+export const GETTING_BREWERY_DATA_FAILURE = 'GETTING_BREWERY_DATA_FAILURE';
 
 export const getData = () => {
     return dispatch => {
@@ -12,9 +13,10 @@ export const getData = () => {
         axios.get('https://api.openbrewerydb.org/breweries')
             .then(res => {
                 //put res.data.data on payload and dispatch it
-                dispatch({type: })
-                )
-            .catch(error => console.log(error));
-
+                dispatch({type: GETTING_BREWERY_DATA_SUCCESS, payload: res.data});
+            })
+            .catch(error => {
+                dispatch({type: GETTING_BREWERY_DATA_FAILURE, payload: error.response});
+            });
     }
 }

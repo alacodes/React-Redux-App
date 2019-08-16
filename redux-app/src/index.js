@@ -4,7 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { reducer } from './reducers';
-import RecipePrintout from './components/recipePrintout';
+import BreweryPrintout from './components/breweryPrintout';
 import './index.css';
 
 
@@ -14,7 +14,7 @@ const store = createStore(reducer, applyMiddleware(thunk));
 function App() {
     return(
     <div className="App">
-        <RecipePrintout />
+        <BreweryPrintout />
     </div>
     )
 }

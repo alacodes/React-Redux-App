@@ -1,1 +1,1 @@
-export { getData, GETTING_BREWERY_DATA_START} from './recipeActions';
+export { getData, GETTING_BREWERY_DATA_START, GETTING_BREWERY_DATA_SUCCESS, GETTING_BREWERY_DATA_FAILURE} from './breweryActions';

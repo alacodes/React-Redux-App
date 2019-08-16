@@ -1,10 +1,11 @@
 
-import {GETTING_BREWERY_DATA_START} from '../Actions';
+import {GETTING_BREWERY_DATA_START, GETTING_BREWERY_DATA_SUCCESS, GETTING_BREWERY_DATA_FAILURE} from '../Actions';
+
 
 //build the reducer
 
 const initialState = {
-    recipe: [],
+    brewery: [],
     isLoading: false,
     error: ''
 }
@@ -17,6 +18,17 @@ export const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isLoading: true,
+                error: ''
+            };
+        case GETTING_BREWERY_DATA_SUCCESS:
+            return {
+                ...state,
+                isLoading: false,
+                brewery: action.payload,
+                error: ''
+            };
+        case GETTING_BREWERY_DATA_FAILURE:
+            return {
                 error: ''
             }
         default: 
